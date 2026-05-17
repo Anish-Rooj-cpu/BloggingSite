@@ -60,13 +60,6 @@ a {
     justify-content: space-between;
     align-items: center;
 }
-/* --- Logo Image Styling --- */
-.site-logo {
-    height: 45px; 
-    width: auto;  
-    display: block;
-    transition: transform 0.2s ease;
-}
 
 .site-logo:hover {
     transform: scale(1.05); /* Adds a subtle zoom effect when hovered */
