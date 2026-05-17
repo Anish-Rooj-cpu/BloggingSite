@@ -1,39 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnggViz | Engineering & Mathematics</title>
+    <title>EnggViz | Engineering & Mathematics Architecture</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container nav-bar">
-            <h1 class="logo">EnggViz</h1>
+            <h1 class="logo"><a href="index.html">EnggViz<span>.</span></a></h1>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Articles</a></li>
+                    <li><a href="#">Projects</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
+    <main>
         <section class="hero">
-            <h2>System Architecture & Engineering Visualizations</h2>
-            <p>Select a topic below to read the full analysis.</p>
+            <div class="container">
+                <span class="hero-badge">Welcome to the blog</span>
+                <h2>Deep Dives into System Architecture & RTL Design</h2>
+                <p>Exploring the intersection of hardware engineering, mathematics, and digital signal processing
+                    through detailed tutorials and visualizations.</p>
+            </div>
         </section>
 
-        <section id="feed-container" class="grid-feed"></section>
+        <div class="container main-content">
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Topics</button>
+                <button class="filter-btn" data-filter="Hardware">Hardware</button>
+                <button class="filter-btn" data-filter="DSP">DSP</button>
+                <button class="filter-btn" data-filter="Mathematics">Mathematics</button>
+            </div>
+
+            <section id="feed-container" class="grid-feed">
+            </section>
+        </div>
     </main>
 
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 EnggViz.online</p>
+        <div class="footer-bottom">
+            <div class="footer-brand">
+                <h2 class="logo">EnggViz<span>.</span></h2>
+                <p>Demystifying complex engineering concepts line by line, gate by gate.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Anish-Rooj-cpu" target="_blank" rel="noopener"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/anish-rooj" target="_blank" rel="noopener"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="container">
+                <p>&copy; 2026 EnggViz.online | Engineered by Anish Rooj</p>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
