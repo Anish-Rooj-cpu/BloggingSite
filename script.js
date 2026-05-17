@@ -18,7 +18,7 @@ const blogIndex = [
         readTime: "10 min read",
         category: "Digital Control Systems",
         excerpt: "A rigorous treatment of frequency warping, conformal mapping, and how the bilinear transform eliminates aliasing in IIR filter design.",
-        url: "pages/Bilinear Transformation/index.html"
+        url: "pages/BilinearTransformation/index.html"
     },
     {
         id: "post-laplace",
