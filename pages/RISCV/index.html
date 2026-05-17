@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Building a Single-Cycle RISC-V Processor from Scratch in Verilog HDL | EnggViz</title>
+          <link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+          <header class="site-header">
+                    <div class="container nav-bar">
+                              <h1 class="logo"><a href="../../index.html"
+                                                  style="text-decoration: none; color: inherit;">EnggViz</a></h1>
+                              <nav>
+                                        <ul class="nav-links">
+                                                  <li><a href="../../index.html">Home</a></li>
+                                                  <li><a href="#">About</a></li>
+                                        </ul>
+                              </nav>
+                    </div>
+          </header>
+
+          <main class="container article-container">
+                    <article class="blog-post">
+                              <header class="post-header">
+                                        <span class="post-category">RTL Design</span>
+                                        <h1 class="post-title">Building a Single-Cycle RISC-V Processor from Scratch in
+                                                  Verilog HDL</h1>
+                                        <div class="post-meta">
+                                                  <span class="date">May 17, 2026</span>
+                                        </div>
+                              </header>
+
+                              <section class="post-content">
+                                        <h2>I. Introduction</h2>
+                                        <p>Abstractions are useful, but they hide the true beauty of computer
+                                                  architecture. This post details the construction of a 32-bit (RV32I)
+                                                  single-cycle RISC-V processor entirely in Verilog HDL, peeling back
+                                                  the layers to understand how software instructions map to physical
+                                                  hardware signals.</p>
+
+                                        <h2>II. Understanding the RISC-V Instruction Set Architecture (ISA)</h2>
+                                        <p>The RISC-V base integer instruction set relies on a highly regular 32-bit
+                                                  instruction format. We will decode the six fundamental formats:
+                                                  R-type, I-type, S-type, B-type, U-type, and J-type. The machine parses
+                                                  the <code>opcode</code>, <code>funct3</code>, and <code>funct7</code>
+                                                  fields to route data through the hardware.</p>
+
+                                        <div class="placeholder-image">
+                                                  [Placeholder: 32-bit Instruction Format Diagram]
+                                        </div>
+
+                                        <h2>III. Designing the Datapath (The Modular Approach)</h2>
+                                        <p>A processor is a collection of interacting modules. Here is the breakdown of
+                                                  the datapath:</p>
+                                        <ul>
+                                                  <li><strong>Program Counter (PC) & Instruction Memory:</strong> The
+                                                            instruction fetch mechanism.</li>
+                                                  <li><strong>Register File:</strong> 32x32-bit registers with dual
+                                                            asynchronous reads and synchronous writes.</li>
+                                                  <li><strong>The ALU:</strong> Executing ADD, SUB, AND, OR, XOR, and
+                                                            bitwise shifts.</li>
+                                                  <li><strong>Data Memory:</strong> Interfacing with Load (LW) and Store
+                                                            (SW) operations.</li>
+                                                  <li><strong>Immediate Generation:</strong> Sign-extending variable
+                                                            immediate fields.</li>
+                                        </ul>
+
+                                        <h2>IV. The Control Unit (The Brains)</h2>
+                                        <p>While the datapath moves the bits, the Control Unit tells them where to go.
+                                                  By mapping the <code>opcode</code> to multiplexer select lines (e.g.,
+                                                  <code>ALUSrc</code>, <code>MemtoReg</code>, <code>RegWrite</code>),
+                                                  the control unit orchestrates the entire cycle.</p>
+
+                                        <h2>V. Verilog Implementation Details</h2>
+                                        <p>Transitioning from block diagrams to RTL requires strict adherence to
+                                                  synchronous design principles. Here is an example of implementing the
+                                                  ALU using combinational logic:</p>
+
+                                        <pre><code class="language-verilog">module ALU (
+    input  [31:0] a, b,
+    input  [3:0]  alu_control,
+    output reg [31:0] result,
+    output zero
+);
+    assign zero = (result == 0);
+
+    always @(*) begin
+        case (alu_control)
+            4'b0000: result = a & b; // AND
+            4'b0001: result = a | b; // OR
+            4'b0010: result = a + b; // ADD
+            4'b0110: result = a - b; // SUB
+            default: result = 32'b0;
+        endcase
+    end
+endmodule</code></pre>
+
+                                        <h2>VI. Simulation, Verification, and Visualization</h2>
+                                        <p>Writing the RTL is only half the battle. We verify the processor by loading
+                                                  machine code compiled from assembly into our instruction memory and
+                                                  observing the waveform outputs to track the propagation of signals
+                                                  through the datapath.</p>
+
+                                        <h2>VII. Conclusion & Future Scope</h2>
+                                        <p>A single-cycle processor is structurally simple but suffers from a long
+                                                  critical path. The next evolution in this design is pipelining,
+                                                  introducing pipeline registers to handle data and control hazards.</p>
+                              </section>
+                    </article>
+          </main>
+
+          <footer class="site-footer">
+                    <div class="container">
+                              <p>&copy; 2026 EnggViz.online</p>
+                    </div>
+          </footer>
+</body>
+
+</html>

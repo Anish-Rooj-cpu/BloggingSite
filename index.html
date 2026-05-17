@@ -3,57 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnggViz | Engineering Concepts & Architecture</title>
+    <title>EnggViz | Engineering & Mathematics</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <h1 class="logo"><a href="#">EnggViz<span>.online</span></a></h1>
+    <header class="site-header">
+        <div class="container nav-bar">
+            <h1 class="logo">EnggViz</h1>
             <nav>
-                <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Visualizers</a></li>
-                    <li><a href="#">Hardware</a></li>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-            </button>
         </div>
     </header>
 
     <main class="container">
-        <!-- Main Blog Feed -->
-        <section class="blog-feed" id="post-container">
-            <!-- Blog posts will be injected here by JavaScript -->
+        <section class="hero">
+            <h2>System Architecture & Engineering Visualizations</h2>
+            <p>Select a topic below to read the full analysis.</p>
         </section>
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="widget about-widget">
-                <h3>About EnggViz</h3>
-                <p>Exploring the depths of electronics, telecommunications, and computer architecture through interactive visualizations and deep-dive technical articles.</p>
-            </div>
-            
-            <div class="widget tags-widget">
-                <h3>Popular Topics</h3>
-                <div class="tags">
-                    <span class="tag" data-filter="all">All</span>
-                    <span class="tag" data-filter="risc-v">RISC-V</span>
-                    <span class="tag" data-filter="rtl">RTL Design</span>
-                    <span class="tag" data-filter="dsp">DSP</span>
-                    <span class="tag" data-filter="verilog">Verilog</span>
-                </div>
-            </div>
-        </aside>
+        <section id="feed-container" class="grid-feed"></section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 EnggViz.online. Hosted with <i class="fas fa-heart"></i> on GitHub Pages.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 EnggViz.online</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
