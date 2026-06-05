@@ -12,18 +12,17 @@
         content="In-depth articles on engineering concepts, mathematics, and architecture. Clear explanations, diagrams, and insights for students and professionals.">
     <meta name="author" content="EnggViz">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="https://www.blog.enggviz.com/">
+    <link rel="canonical" href="https://blog.enggviz.online/">
     <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
     <!-- ✅ Open Graph (blog-specific type) -->
     <meta property="og:type" content="blog">
-    <meta property="og:url" content="https://www.blog.enggviz.com/">
-    <meta property="og:title" content="EnggViz — Engineering & Mathematics Explained">
+    <meta property="og:url" content="https://blog.enggviz.online/">
+    <meta property="og:title" content="EnggViz Blog — Engineering & Mathematics Explained">
     <meta property="og:description"
         content="In-depth articles on engineering concepts, mathematics, and architecture. Clear explanations, diagrams, and insights for students and professionals.">
 
-
     <!-- ✅ Blog/article discoverability -->
-    <link rel="alternate" type="application/rss+xml" title="EnggViz RSS Feed" href="https://www.blog.enggviz.com/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="EnggViz RSS Feed" href="https://blog.enggviz.online/feed.xml">
 
     <!-- ✅ Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +40,25 @@
 
     <!-- ✅ App stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .footer-platform-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+            margin: 8px 0 12px;
+            font-size: 13px;
+        }
+        .footer-platform-links a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.75;
+            transition: opacity 0.15s;
+        }
+        .footer-platform-links a:hover { opacity: 1; }
+        .footer-platform-links span { opacity: 0.3; }
+        .logo-dot { opacity: 0.6; }
+    </style>
 
     <!-- ✅ Structured data — Blog (homepage) -->
     <script type="application/ld+json">
@@ -67,14 +85,14 @@
     <header class="site-header">
         <div class="container nav-bar">
             <h1 class="logo">
-                <a href="index.html">
-                    EnggViz
-                </a>
+                <a href="index.html">EnggViz<span class="logo-dot">.</span></a>
             </h1>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Articles</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="index.html" class="active">Blog</a></li>
+                    <li><a href="https://enggviz.online" target="_blank" rel="noopener">ECV</a></li>
+                    <li><a href="https://lab.enggviz.online" target="_blank" rel="noopener">RTL Lab</a></li>
+                    <li><a href="https://enggviz.online/about.html" target="_blank" rel="noopener">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -83,10 +101,11 @@
     <main>
         <section class="hero">
             <div class="container">
-                <span class="hero-badge">Welcome to the blog</span>
-                <h2>Deep Dives into System Architecture & RTL Design</h2>
-                <p>Exploring the intersection of hardware engineering, mathematics, and digital signal processing
-                    through detailed tutorials and visualizations.</p>
+                <span class="hero-badge">EnggViz · Technical Blog</span>
+                <h2>Engineering From First Principles</h2>
+                <p>Deep-dive articles on RTL design, RISC-V architecture, DSP theory, and mathematics —
+                    written for engineers who want to understand, not just copy. Part of the
+                    <a href="https://enggviz.online" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EnggViz</a> platform.</p>
             </div>
         </section>
 
@@ -108,15 +127,22 @@
             <div class="footer-brand">
                 <h2 class="logo">EnggViz<span>.</span></h2>
                 <p>Demystifying complex engineering concepts line by line, gate by gate.</p>
+                <div class="footer-platform-links">
+                    <a href="https://enggviz.online" target="_blank" rel="noopener">ECV</a>
+                    <span>·</span>
+                    <a href="https://lab.enggviz.online" target="_blank" rel="noopener">RTL Lab</a>
+                    <span>·</span>
+                    <a href="https://blog.enggviz.online">Blog</a>
+                    <span>·</span>
+                    <a href="https://enggviz.online/about.html" target="_blank" rel="noopener">About</a>
+                </div>
                 <div class="social-links">
-                    <a href="https://github.com/Anish-Rooj-cpu" target="_blank" rel="noopener"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/anish-rooj" target="_blank" rel="noopener"><i
-                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Anish-Rooj-cpu" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/anish-rooj" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="container">
-                <p>&copy; 2026 EnggViz.online | Engineered by Anish Rooj</p>
+                <p>&copy; 2026 EnggViz.online | Engineered by Anish Rooj | Free for educational use</p>
             </div>
         </div>
     </footer>
